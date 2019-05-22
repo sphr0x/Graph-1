@@ -3,9 +3,9 @@
 #include <string>
 #include <sstream>
 #include <iomanip>
-// Hinweis: Die Klasse „Edge“ ist also eine gerichtete Kante
+// Hinweis: Die Klasse „Edge“ ist eine gerichtete Kante
 
-class Edge : public Node
+class Edge //: public Node     // da komposition -> KEINE Vererbung ??
 {
 private:
 	Node& m_srcNode;										// 1 c)
