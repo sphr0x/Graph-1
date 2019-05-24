@@ -3,7 +3,7 @@
 #include <string>
 #include <sstream>
 #include <iomanip>
-#include "NodeIdException.h"
+#include "NodeIdException.h" 
 
 			// Hinweis: Die Klasse „Edge“ ist eine gerichtete Kante
 class Edge //: public Node     // da komposition -> KEINE Vererbung !!

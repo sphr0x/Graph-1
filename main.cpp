@@ -7,7 +7,7 @@
 int main(){
 	Node* k3 = nullptr;
 	Node* k4 = nullptr;
-
+	
 	try{															// 2 c)
 		Node k1;													// 2 b)
 		Node k2("right");

@@ -20,14 +20,14 @@ void Node::checkID()const {
 	}
 }
 Node::Node(const std::string id): m_id(id) {
-	++s_numInstances;
 	checkID();															// 2 a)
+	++s_numInstances;
 	std::cout << "Node-count(from string):" <<s_numInstances << std::endl;
 }
 Node::Node(){															// 1 a2)
-	++s_numInstances;
 	m_id = generateID();
 	checkID();
+	++s_numInstances;
 	std::cout << "Node-count(from standart):" <<s_numInstances << std::endl;
 	
 }
