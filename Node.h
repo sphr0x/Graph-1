@@ -4,6 +4,7 @@
 #include <iomanip>
 #include <cctype>
 #include <iostream>
+#include "NodeIdException.h"
 
 class Node
 {
@@ -13,11 +14,9 @@ private:
 public:
 	const std::string generateID()const;
 	const std::string getID()const;										// 1  b)
-	void checkInput();
-
-	Node(std::string id);												// 1 a1)
+	void checkID()const;
+	Node(const std::string id);												// 1 a1)
 	Node();
-	// Node(const Node& copy); // cconst
 	~Node();
 };
 

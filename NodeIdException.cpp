@@ -1,7 +1,7 @@
 #include "NodeIdException.h"
 
 const std::string NodeIdException::getError()const {
-	return "Exception!";
+	return "Exception! (caught object)";
 }
 NodeIdException::NodeIdException(){
 

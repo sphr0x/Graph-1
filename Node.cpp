@@ -10,43 +10,29 @@ const std::string Node::generateID()const{
 const std::string Node::getID()const {
 	return m_id;
 }
-void Node::checkInput() {											// 2 b) + 3 a)
-	try {
-		for (int i = 0; i < m_id.length(); ++i) {
-
-			if (isalnum(m_id[i]) || m_id[i] == '_') {
-				std::cout << "pos " << i << " ok" << std::endl;
-			}
-			else {
-				throw "fail";
-			}
+void Node::checkID()const {
+	NodeIdException warning;
+	for (int i = 0; i < m_id.length(); ++i) {
+		if (!(isalnum(m_id[i]) || m_id[i] == '_')) {
+			//throw "fail";
+			throw warning;												// 4 a)
 		}
 	}
-	catch(const char*){												// hier: catch what was thrown | std::string ==> const char* 
-		std::cerr << "Exception: Wrong signifier!\n" << std::endl;	// 2 c)
-	}
 }
-
-
-
-Node::Node(std::string id): m_id(id) {
-	checkInput();									// 2 a)
+Node::Node(const std::string id): m_id(id) {
 	++s_numInstances;
-	std::cout << s_numInstances << std::endl;
+	checkID();															// 2 a)
+	std::cout << "Node-count(from string):" <<s_numInstances << std::endl;
 }
-Node::Node(){										// 1 a2)
+Node::Node(){															// 1 a2)
+	++s_numInstances;
 	m_id = generateID();
-	checkInput();									// 2 a)
-	++s_numInstances;
-	std::cout << s_numInstances << std::endl;
+	checkID();
+	std::cout << "Node-count(from standart):" <<s_numInstances << std::endl;
 	
-}/*
-Node::Node(const Node& copy) // cconst
-	: m_id(copy.m_id){
-	++s_numInstances;
-}*/
+}
 Node::~Node(){
 	--s_numInstances;
-	std::cout << s_numInstances << std::endl;
+	std::cout << "Node-count(dest):" << s_numInstances << std::endl;
 }
 int Node::s_numInstances = 0;

@@ -1,6 +1,7 @@
 #pragma once
 #include <iostream>
-class NodeIdException
+
+class NodeIdException										// 4 a)
 {
 private:
 
@@ -9,4 +10,3 @@ public:
 	NodeIdException();
 	~NodeIdException();
 };
-
